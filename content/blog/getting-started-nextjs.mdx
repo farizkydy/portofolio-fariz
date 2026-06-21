@@ -1,0 +1,59 @@
+export const metadata = {
+  title: "Getting Started with Next.js 16",
+  date: "2024-12-15",
+  excerpt: "A practical guide to building modern web applications with the latest version of Next.js, covering the App Router, Server Components, and static exports.",
+}
+
+# Getting Started with Next.js 16
+
+Next.js 16 brings significant improvements to the developer experience with enhanced App Router capabilities, improved performance, and better static export support.
+
+## Why Next.js?
+
+If you're building modern web applications, Next.js provides an excellent foundation with:
+
+- **Server Components** by default for optimal performance
+- **Static exports** for deployment anywhere
+- **Built-in optimizations** for images, fonts, and scripts
+- **TypeScript support** out of the box
+
+## Setting Up Your Project
+
+Getting started is straightforward:
+
+```bash
+npx create-next-app@latest my-app
+cd my-app
+npm run dev
+```
+
+## The App Router
+
+The App Router in Next.js 16 uses a file-system based routing approach. Each folder in the `app` directory represents a route segment:
+
+```
+app/
+  page.tsx        → /
+  about/
+    page.tsx      → /about
+  blog/
+    page.tsx      → /blog
+    [slug]/
+      page.tsx    → /blog/[slug]
+```
+
+## Static Exports
+
+For portfolio sites and blogs, static exports are ideal. Configure your `next.config.ts`:
+
+```ts
+const nextConfig = {
+  output: 'export',
+}
+```
+
+This generates static HTML, CSS, and JS files that can be hosted anywhere — GitHub Pages, Netlify, or any static host.
+
+## What's Next?
+
+In upcoming posts, I'll dive deeper into Server Components, MDX integration for blogs, and performance optimization techniques.

@@ -1,0 +1,63 @@
+export const metadata = {
+  title: "Clean Code Principles I Teach Every Junior Developer",
+  date: "2025-01-20",
+  excerpt: "After mentoring 1,000+ junior developers, these are the clean code principles that make the biggest difference in code quality and team collaboration.",
+}
+
+# Clean Code Principles I Teach Every Junior Developer
+
+After mentoring over 1,000 junior developers, I've noticed patterns — the same principles come up again and again. These aren't abstract concepts from textbooks. They're practical habits that transform how you write code every single day.
+
+## 1. Name Things What They Are
+
+The single most impactful change you can make:
+
+```ts
+// Bad
+const d = new Date()
+const fn = (x) => x * 2
+
+// Good
+const currentDate = new Date()
+const doubleValue = (value) => value * 2
+```
+
+A good name eliminates the need for comments. If you feel the urge to add a comment, ask yourself: "Can I rename this instead?"
+
+## 2. Functions Should Do One Thing
+
+The Single Responsibility Principle isn't just for classes. Every function you write should have one reason to change.
+
+```ts
+// Bad — does too much
+function processUser(data) {
+  const validated = validate(data)
+  const saved = saveToDatabase(validated)
+  sendEmail(saved.email)
+  return saved
+}
+
+// Good — each function has one job
+function processUser(data) {
+  const validated = validate(data)
+  const saved = saveToDatabase(validated)
+  notifyUser(saved)
+  return saved
+}
+```
+
+## 3. Read > Write
+
+You'll spend 10x more time reading code than writing it. Write code for the next person — which might be you in 6 months.
+
+## 4. Consistency Over Perfection
+
+A consistent codebase where everyone follows the same patterns is more maintainable than a "perfect" codebase with 10 different styles. Agree on conventions and stick to them.
+
+## 5. Review Your Own Code First
+
+Before asking for a code review, review your own changes. Read every line as if someone else wrote it. You'll catch 80% of issues before anyone else sees them.
+
+---
+
+These principles seem simple, but mastering them takes practice. That's exactly why structured mentoring and regular code reviews are so valuable — they create the repetition needed to turn knowledge into habit.
